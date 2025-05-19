@@ -1,0 +1,37 @@
+1) python program to compute a student's GPA for 6 courses
+
+grade_points = {'A': 5, 'B': 4, 'C': 3, 'D': 2, 'F': 0}
+total_units = 0
+total_score = 0
+
+for i in range(1, 7):
+    grade = input(f"Enter grade for course {i} (A-D or F): ").upper()
+    while grade not in grade_points:
+        grade = input("Invalid grade. Enter A, B, C, D, or F: ").upper()
+    unit = int(input(f"Enter unit load for course {i}: "))
+    total_units += unit
+    total_score += grade_points[grade] * unit
+
+gpa = total_score / total_units if total_units else 0
+print(f"\nYour GPA for 6 courses is: {round(gpa, 2)}")
+
+
+2)python program to implement a Caesar cypher
+
+def caesar_cipher(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            shifted = (ord(char) - base + shift) % 26 + base
+            result += chr(shifted)
+        else:
+            result += char
+    return result
+
+message = input("Enter your message: ")
+key = int(input("Enter shift key (e.g. 3): "))
+
+encrypted = caesar_cipher(message, key)
+print("\nEncrypted message:", encrypted)
+
