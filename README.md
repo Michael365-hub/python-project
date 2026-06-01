@@ -1,2 +1,3 @@
 # python-project
-sanusi assignment for EIE326
+my personal project
+
